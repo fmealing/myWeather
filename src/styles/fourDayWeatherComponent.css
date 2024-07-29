@@ -1,0 +1,54 @@
+.overall-container--four-day {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.day-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.day-container h2 {
+  font-size: 18px;
+  color: #333;
+}
+
+.day-container p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.temp-container,
+.wind-container,
+.humidity-container,
+.uvi-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.temp-container p,
+.wind-container p,
+.humidity-container p,
+.uvi-container p {
+  margin-left: 10px;
+}
+
+.general-container--four-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.general-container--four-day p {
+  margin-left: 10px;
+  color: #666;
+}
