@@ -13,6 +13,7 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import CustomMarkerIcon from "../assets/CustomMarkerIcon";
 import "../styles/currentWeather.css";
+import { useDarkMode } from "../DarkModeContext";
 
 function formatLocalTime(utcTime, format) {
   const date = new Date(utcTime * 1000);
@@ -62,6 +63,7 @@ function formatUVI(uvi) {
 }
 
 const CurrentWeatherComponent = ({ weather, location }) => {
+  const { darkMode } = useDarkMode();
   const currentWeather = weather?.current;
   const feelsLike = (currentWeather?.feels_like - 273.15).toFixed(1);
   const actualTemp = (currentWeather?.temp - 273.15).toFixed(1);
@@ -74,6 +76,11 @@ const CurrentWeatherComponent = ({ weather, location }) => {
 
   const latitude = location?.latitude || 51.505;
   const longitude = location?.longitude || -0.09;
+
+  const lightMapUrl =
+    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
+  const darkMapUrl =
+    "https://api.mapbox.com/styles/v1/mapbox/navigation-night-v1/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmxvcmlhbm1lYWxpbmciLCJhIjoiY2xzYzN6aW9jMDlnNzJpbWgxOG43bXo0ZSJ9.A2lAfvJ61GZiwSpywXHaqA";
 
   return (
     <div className="overall-container--current">
@@ -118,8 +125,8 @@ const CurrentWeatherComponent = ({ weather, location }) => {
             className="leaflet-container"
           >
             <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url={darkMode ? darkMapUrl : lightMapUrl}
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a> &copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a>'
             />
             <Marker position={[latitude, longitude]} icon={CustomMarkerIcon}>
               <Popup>

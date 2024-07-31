@@ -4,8 +4,15 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: #e7f5ff;
+  color: #333;
   margin: 0;
   padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 .App {
@@ -13,9 +20,16 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   background: white;
+  color: #333;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .App {
+  background: #333;
+  color: #e0e0e0;
 }
 
 button {
@@ -32,6 +46,21 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+body.dark-mode button {
+  background-color: #0056b3;
+  color: #e0e0e0;
+}
+
+button.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button.dark-mode-toggle svg {
+  font-size: 20px;
 }
 
 input {
@@ -63,6 +92,11 @@ img {
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 5px;
+  background-color: #4263eb;
+}
+
+body.dark-mode .navigation {
+  background-color: #274bb5;
 }
 
 .navigation-list {

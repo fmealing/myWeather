@@ -4,6 +4,12 @@
   gap: 20px;
   padding: 20px;
   background-color: #f0f0f0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .overall-container--four-day {
+  background-color: #222;
+  color: #e0e0e0;
 }
 
 .day-container {
@@ -12,11 +18,12 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.day-container h2 {
-  font-size: 18px;
-  color: #333;
+body.dark-mode .day-container {
+  background-color: #444;
+  color: #e0e0e0;
 }
 
 .day-container p {
@@ -24,20 +31,28 @@
   color: #666;
 }
 
+body.dark-mode .day-container p {
+  color: #aaa;
+}
+
+.description-container,
 .temp-container,
 .wind-container,
 .humidity-container,
-.uvi-container {
+.uvi-container,
+.precipitation-container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 10px 0;
 }
 
+.description-container p,
 .temp-container p,
 .wind-container p,
 .humidity-container p,
-.uvi-container p {
+.uvi-container p,
+.precipitation-container p {
   margin-left: 10px;
 }
 
@@ -51,4 +66,46 @@
 .general-container--four-day p {
   margin-left: 10px;
   color: #666;
+}
+
+body.dark-mode .general-container--four-day p {
+  color: #aaa;
+}
+
+.sun-times-container {
+  background-color: #eef4ff;
+  border-radius: 150px;
+  padding: 10px;
+  color: #0056b3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body.dark-mode .sun-times-container {
+  background-color: #333;
+  color: #aaa;
+}
+
+.sun-times-container p {
+  margin: 5px 0;
+}
+
+.heading--four-day {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+body.dark-mode .heading--four-day {
+  color: #ddd;
+}
+
+.paragraph--four-day {
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+body.dark-mode .paragraph--four-day {
+  color: #bbb;
 }

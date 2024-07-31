@@ -1,4 +1,3 @@
-// components/Weather.jsx
 import React, { useState, useEffect } from "react";
 import { getWeatherByCoordinates } from "../services/weatherService";
 import { PulseLoader } from "react-spinners";
