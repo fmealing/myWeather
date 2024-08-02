@@ -1,0 +1,79 @@
+/* 
+  url1: "https://png.pngtree.com/thumb_back/fh260/background/20201012/pngtree-white-cloud-on-blue-sky-weather-background-image_410050.jpg"
+  url2: "https://img.freepik.com/free-photo/view-apocalyptic-dark-clouds_23-2151065795.jpg"
+*/
+
+/* Default light mode background image */
+.home-container {
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201012/pngtree-white-cloud-on-blue-sky-weather-background-image_410050.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: background-color 0.3s, color 0.3s, background-image 0.3s;
+}
+
+/* Dark mode background image */
+body.dark-mode .home-container {
+  background-image: url("https://img.freepik.com/free-photo/view-apocalyptic-dark-clouds_23-2151065795.jpg");
+  color: #e0e0e0;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+body.dark-mode .overlay {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.content {
+  text-align: center;
+}
+
+.h1--home {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+body.dark-mode h1 {
+  color: #e0e0e0;
+}
+
+.p--home {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+body.dark-mode p {
+  color: #aaa;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+body.dark-mode .cta-button {
+  background-color: #0056b3;
+  color: #e0e0e0;
+}
+
+body.dark-mode .cta-button:hover {
+  background-color: #003f7f;
+}

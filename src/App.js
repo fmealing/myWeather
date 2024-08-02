@@ -1,4 +1,3 @@
-// src/App.js
 import { useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Weather from "./components/Weather";
